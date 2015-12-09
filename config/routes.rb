@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'profiles/:id' => "profiles#show", as: :profile
   get 'profiles' => "profiles#index"
 
-  root "tweets#index"
+  root "tweets#index"   
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
