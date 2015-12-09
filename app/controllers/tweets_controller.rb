@@ -10,7 +10,31 @@ class TweetsController < ApplicationController
   def show
   end
 
-  def edit
+  def destroy
+    @tweet.destroy
+    
+    respond_to do |format |
+      format.html {redirect_to tweets_url, notice: "Tweet was deleted" }
+    end 
+    
+  end
+
+  def update
+
+    #@tweet = Tweet.find(params[:id])
+
+    respond_to do |format|
+      if @tweet.update( tweet_params )
+        format.html {redirect_to @tweet, notice: 'Tweet was successfully updated'}
+      else
+        format.html {render :edit}
+      end
+    end
+
+  end
+
+  def edit  
+    #@tweet = Tweet.find(params[:id])
   end
 
   def new
@@ -27,7 +51,10 @@ class TweetsController < ApplicationController
         format.html {render :new}
       end
     end
+
   end
+
+
   private
 
   def tweet_params
