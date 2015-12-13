@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  #Allows tweets to have the URL CRUD pages
   resources :tweets
 
+  #When a person open a specific user profile id, it will direct to the show page, as a profile page
   get 'profiles/:id' => "profiles#show", as: :profile
+
+  #Route the general profiles URL to the index URL
   get 'profiles' => "profiles#index"
 
+  #Home page
   root "tweets#index"   
 
+  #Uses devise gem to create user pages, log-in, profile data, etc. 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
