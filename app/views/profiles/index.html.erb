@@ -1,7 +1,11 @@
+<!-- Title of Index Page -->
 <h1> All Profiles </h1>
 
+<!-- Unordered list of tweets -->
 <ul>
+   <!-- Iterates through each user object in the user array -->
    <% @users.each do | x | %>
+      <!-- Displays each username, and links to the users show page -->
       <li><%= x.username %> <%= link_to "Profile", profile_path(x) %></li>
    <% end %>
 </ul>

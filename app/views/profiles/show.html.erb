@@ -1,5 +1,8 @@
+<!-- Header for Show page.  Include's username of User -->
 <h1><%= @user.username %>'s Profile</h1>
 
+<!-- Iterates through each tweet in the user's profile -->
 <% @user.tweets.each do |tweet| %>
+   <!-- Displays each tweet the user has posted -->
   <%= tweet.message %> <br />
 <% end %>
