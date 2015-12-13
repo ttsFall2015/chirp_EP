@@ -1,8 +1,12 @@
+<!-- used to diplay any notice messages -->
 <p id="notice"><%= notice %></p>
 
-<h1>Whatever, this is just a header</h1>
+<!-- Header for page -->
+<h1>Main Tweet Page</h1>
 
+<!-- Table to display all tweets -->
 <table>
+  <!-- Table Header -->
   <thead>
     <tr>
       <th>Message</th>
@@ -10,22 +14,31 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
 
+    <!-- Iterates through array of tweets -->
     <% @tweets.each do |x| %>
       <tr>
+        <!-- Displays tweet message -->
         <td><%= x.message %></td>
+        <!-- Display's the username of the user who posted the tweet -->
         <td><%= x.user.username %></td>
+        <!-- Links to the tweet's profile page -->
         <td><%= link_to 'Show', x %></td>
+        <!-- links to the edit page to update the tweet -->
         <td><%= link_to 'Edit', edit_tweet_path(x) %></td>
+        <!-- deletes the tweet -->
         <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    
 
   </tbody>
 </table>
+
 <br>
+<!-- link to allow user to create a new tweet -->
 <%= link_to 'New Tweet', new_tweet_path, class: "btn btn-primary" %>
 
+<!-- link to allow user to sign-out -->
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>

@@ -1,28 +1,41 @@
+<!-- Partial hmtl page.  Used with edit and new html pages -->
 
+<!-- Beginning of form -->
 <%= form_for(@tweet) do |f| %>
-<% if @tweet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
 
-      <ul>
-        <% @tweet.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <!-- Checks to see if tweet has any errors -->
+  <% if @tweet.errors.any? %>
+      <div id="error_explanation">
+        <!-- Diplays number of error messages found -->
+        <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+        <ul>
+          <!-- Displays each error message that was found -->
+          <% @tweet.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
   <% end %>
 
+  <!-- html form field used to enter/update the tweet message -->
   <div class="field">
     <%= f.label :message %><br>
     <%= f.text_field :message %>
   </div>
+
+  <!-- html form field used to diplay user id -->
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id, value: current_user.id %>
   </div>
+
+  <!-- Submit button for form -->
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
 
+<!-- links back to main tweet page -->
 <%= link_to 'Back', tweets_path %>
