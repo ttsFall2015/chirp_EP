@@ -23,15 +23,17 @@
          -->
          </div>
 
-         <!-- Right Navbar Items 
+         <!-- Right Navbar Items -->
          <ul class="nav navbar-nav navbar-right">
+                <% if current_user != nil %>
                <li>
+                  <%= link_to current_user.username, profile_path(current_user) %>
                </li>
-
                <li>
+                <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
                </li>
+               <% end %>
          </ul>
-      -->
 
          </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
