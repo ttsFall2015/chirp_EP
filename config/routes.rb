@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   #Allows tweets to have the URL CRUD pages
-  resources :tweets
+  resources :tweets do
+    resource :like 
+  end
+
+  #Allows relationships to have the URL CRUD pages
+  resources :relationships
+
+  #
+  get 'likes/create'
 
   #When a person open a specific user profile id, it will direct to the show page, as a profile page
   get 'profiles/:id' => "profiles#show", as: :profile
