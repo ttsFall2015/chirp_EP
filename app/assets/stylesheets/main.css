@@ -1,9 +1,22 @@
 
 
-body{
-   background-color: green;
+.main {
+   margin-left: 2em;
 }
 
-h1{
-   background-color: yellow;
+.main table{
+   border-collapse: separate;
+   background-color: #e5f9ff;
+   margin-left: 1em;
+   width: 90%;
+   border-radius: 1em;
 }
+
+.main th {
+   padding: 1em;
+}
+
+.main td {
+   padding: 1em;
+}
+
