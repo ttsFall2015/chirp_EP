@@ -4,6 +4,10 @@
    margin-left: 2em;
 }
 
+.main h1{
+   text-align: center;
+}
+
 .main table{
    border-collapse: separate;
    background-color: #e5f9ff;
@@ -20,3 +24,8 @@
    padding: 1em;
 }
 
+.main .tweet_show{
+   margin: 0 auto;
+   width: 20%;
+   
+}

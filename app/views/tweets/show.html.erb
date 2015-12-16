@@ -2,16 +2,17 @@
 <p id="notice"><%= notice %></p>
 
 <!-- Displays tweet's message -->
-<p>
+<h1>
   <strong>Message:</strong>
   <%= @tweet.message %>
-</p>
+</h1>
 
+<div class="tweet_show">
 <!-- Displays username of person who created the tweet -->
-<p>
+<h3>
   <strong>User:</strong>
   <%= @tweet.user.username %>
-</p>
+</h3>
 
 <%= render "shared/likes" %>
 <br />
@@ -21,3 +22,4 @@
 
 <!-- Links back to tweet index page -->
 <%= link_to 'Back', tweets_path %>
+</div>
