@@ -27,9 +27,13 @@
         <!-- Links to the tweet's profile page -->
         <td><%= link_to 'Show', x %></td>
         <!-- links to the edit page to update the tweet -->
+
+        <% if x.user == current_user %>
         <td><%= link_to 'Edit', edit_tweet_path(x) %></td>
         <!-- deletes the tweet -->
         <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
       </tr>
     <% end %>
 
