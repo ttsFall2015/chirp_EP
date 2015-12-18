@@ -20,8 +20,8 @@
 <% if @tweet.user == current_user %>
 <!-- Links to a page to edit the tweet -->
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> 
+<% end %>
 
 <!-- Links back to tweet index page -->
 <%= link_to 'Back', tweets_path %>
-<% end %>
 </div>
